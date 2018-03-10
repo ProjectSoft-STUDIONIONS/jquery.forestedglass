@@ -36,11 +36,11 @@ module.exports = function(grunt){
 					},
 					{
 						src: 'dist/jquery.forestedglass.min.js',
-						dest: 'docs/js/jquery.forestedglass.min.js.map'
+						dest: 'docs/js/jquery.forestedglass.min.js'
 					},
 					{
-						src: 'src/js/jquery.forestedglass.js',
-						dest: 'docs/js/jquery.forestedglass.js'
+						src: 'dist/jquery.forestedglass.min.js.map',
+						dest: 'docs/js/jquery.forestedglass.min.js.map'
 					},
 					{
 						src: 'bower_components/jquery/dist/jquery.js',
