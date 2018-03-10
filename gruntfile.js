@@ -32,23 +32,23 @@ module.exports = function(grunt){
 					},
 					{
 						src: 'bower_components/jquery/dist/jquery.js',
-						dest: 'demo/js/jquery.js'
+						dest: 'docs/js/jquery.js'
 					},
 					{
 						src: 'bower_components/jquery.highlight/jquery.highlight.js',
-						dest: 'demo/js/jquery.highlight.js'
+						dest: 'docs/js/jquery.highlight.js'
 					},
 					{
 						src: 'bower_components/jquery.highlight/jquery.highlight.css',
-						dest: 'demo/css/jquery.highlight.css'
+						dest: 'docs/css/jquery.highlight.css'
 					},
 					{
 						src: 'bower_components/normalize-css/normalize.css',
-						dest: 'demo/css/normalize.css'
+						dest: 'docs/css/normalize.css'
 					},
 					{
 						src: 'src/js/main.js',
-						dest: 'demo/js/main.js'
+						dest: 'docs/js/main.js'
 					}
 				]
 			},
@@ -56,7 +56,7 @@ module.exports = function(grunt){
 		clean: {
 			folder: [
 				'dist/',
-				'demo/'
+				'docs/'
 			]
 		},
 		usebanner: {
@@ -111,10 +111,10 @@ module.exports = function(grunt){
 			},
 			css: {
 				files: {
-					'demo/css/main.css' : [
+					'docs/css/main.css' : [
 						'test/css/main.css'
 					],
-					'demo/css/style.css' : [
+					'docs/css/style.css' : [
 						'test/css/style.css'
 					]
 				}
@@ -163,7 +163,7 @@ module.exports = function(grunt){
 					}
 				},
 				files: {
-					"demo/index.html": ['src/html/index.pug']
+					"docs/index.html": ['src/html/index.pug']
 				}
 			}
 		},
@@ -184,7 +184,7 @@ module.exports = function(grunt){
 						src: [
 							'src/images/*.{png,jpg,gif,svg}'
 						],
-						dest: 'demo/images/',
+						dest: 'docs/images/',
 						filter: 'isFile'
 					}
 				]
