@@ -31,6 +31,18 @@ module.exports = function(grunt){
 						dest: 'dist/jquery.forestedglass.js'
 					},
 					{
+						src: 'dist/jquery.forestedglass.js',
+						dest: 'docs/js/jquery.forestedglass.js'
+					},
+					{
+						src: 'dist/jquery.forestedglass.min.js',
+						dest: 'docs/js/jquery.forestedglass.min.js.map'
+					},
+					{
+						src: 'src/js/jquery.forestedglass.js',
+						dest: 'docs/js/jquery.forestedglass.js'
+					},
+					{
 						src: 'bower_components/jquery/dist/jquery.js',
 						dest: 'docs/js/jquery.js'
 					},
@@ -203,7 +215,6 @@ module.exports = function(grunt){
 				tasks: [
 					'notify:watch',
 					'clean',
-					'copy',
 					'less',
 					'autoprefixer',
 					'jshint',
@@ -213,6 +224,7 @@ module.exports = function(grunt){
 					'pug:temp',
 					'replace',
 					'pug:files',
+					'copy',
 					'notify:done'
 				]
 			}
@@ -239,5 +251,5 @@ module.exports = function(grunt){
 	
 	grunt.renameTask('watch',		'delta');
     grunt.registerTask('dev',		[ 'jshint', 'delta']);
-	grunt.registerTask('default',	['notify:watch', 'clean', 'copy', 'less', 'autoprefixer', 'jshint', 'uglify', 'usebanner', 'imagemin', 'pug:temp', 'replace', 'pug:files', 'notify:done']);
+	grunt.registerTask('default',	['notify:watch', 'clean', 'less', 'autoprefixer', 'jshint', 'uglify', 'usebanner', 'imagemin', 'pug:temp', 'replace', 'pug:files', 'copy', 'notify:done']);
 }
