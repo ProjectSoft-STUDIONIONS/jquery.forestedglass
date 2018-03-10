@@ -319,6 +319,20 @@
 .col.no-margin {
   margin: unset;
 }
+a.link-github {
+  color: #ffffff;
+  text-decoration: none;
+}
+a.link-github svg {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+a.link-github svg#github-icon path {
+  fill: #fff;
+}
 .text-left {
   text-align: left;
 }
