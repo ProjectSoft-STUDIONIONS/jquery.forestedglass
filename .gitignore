@@ -1,0 +1,13 @@
+**/*.ini
+**/*.inf
+**/*.db
+**/.*
+**/desktop.*
+/*.php
+node_modules/**/*
+bower_components/**/*
+test/**/*
+tests/**/*
+src/images/bin/**/*
+src/bin/**/*
+!**/.gitignore

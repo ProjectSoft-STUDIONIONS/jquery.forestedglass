@@ -1,0 +1,8 @@
+<svg viewBox="0 0 500 500" width="500" height="500" class="svg_jquery_blurfilter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<filter id="blurUno">
+		<feGaussianBlur id="blur-value" stdDeviation="5.00"></feGaussianBlur>
+	</filter>
+	<filter id="blurDos">
+		<feGaussianBlur stdDeviation="9"></feGaussianBlur>
+	</filter>
+</svg>

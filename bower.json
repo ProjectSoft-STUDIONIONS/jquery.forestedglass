@@ -1,0 +1,29 @@
+{
+  "name": "jquery.forestedglass",
+  "description": "The effect of frosted glass",
+  "main": "package.json",
+  "authors": [
+    "ProjectSoft <projectsoft2009@yandex.ru>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery",
+    "frosted",
+    "glass"
+  ],
+  "homepage": "https://github.com/ProjectSoft-STUDIONIONS/jquery.forestedglass#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize-css": "normalize.css#^7.0.0",
+    "code-prettify": "*",
+    "jquery.highlight": "https://github.com/ematsakov/highlight.git"
+  }
+}

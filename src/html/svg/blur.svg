@@ -1,0 +1,9 @@
+<svg viewBox="0 0 500 500" width="500" height="500" id="jquery_blurfilter">
+	<filter id="blurUno">
+		<feGaussianBlur id="blur-value" stdDeviation="5.00"></feGaussianBlur>
+		<!--feColorMatrix type="saturate" values="0.50"/-->
+	</filter>
+	<filter id="blurDos">
+		<feGaussianBlur stdDeviation="9"></feGaussianBlur>
+	</filter>
+</svg>
