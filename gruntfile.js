@@ -16,12 +16,77 @@ module.exports = function(grunt){
 		pkg: grunt.file.readJSON("package.json"),
 		meta: {
 			banner: '/**\n' +
-					' * jQuery.forestedGlass: The effect of frosted glass \n'+
+					' * jQuery.forestedGlass v<%= pkg.version %>: The effect of frosted glass \n'+
 					' * \n'+
 					' * Copyright 2018 @ProjectSoft<projectsoft2009@yandex.ru> \n'+
 					' * Licensed under the MIT license. \n'+
 					' * \n'+
 					' */\n'
+		},
+		realFavicon: {
+			favicons: {
+				src: 'src/notify.png',
+				dest: "docs/",
+				options: {
+					iconsPath: '/<%= pkg.name%>',
+					html: [ 'src/html/inc/html_code/favicon.html' ],
+					design: {
+						ios: {
+							pictureAspect: 'backgroundAndMargin',
+							backgroundColor: '#ffffff',
+							margin: '14%',
+							assets: {
+								ios6AndPriorIcons: true,
+								ios7AndLaterIcons: true,
+								precomposedIcons: true,
+								declareOnlyDefaultIcon: true
+							},
+							appName: "<%= pkg.name%>"
+						},
+						desktopBrowser: {},
+						windows: {
+							pictureAspect: 'noChange',
+							backgroundColor: '#ffffff',
+							onConflict: 'override',
+							assets: {
+								windows80Ie10Tile: true,
+								windows10Ie11EdgeTiles: {
+									small: true,
+									medium: true,
+									big: true,
+									rectangle: true
+								}
+							},
+							appName: "<%= pkg.name%>"
+						},
+						androidChrome: {
+							pictureAspect: 'backgroundAndMargin',
+							margin: '17%',
+							backgroundColor: '#ffffff',
+							themeColor: '#ffffff',
+							manifest: {
+								name: "<%= pkg.name%>",
+								display: 'standalone',
+								orientation: 'notSet',
+								onConflict: 'override',
+								declared: true
+							},
+							assets: {
+								legacyIcon: true,
+								lowResolutionIcons: true
+							}
+						},
+						safariPinnedTab: {
+							pictureAspect: 'silhouette',
+							themeColor: '#5bbad5'
+						}
+					},
+					settings: {
+						scalingAlgorithm: 'Mitchell',
+						errorOnImageTooSmall: false
+					}
+				}
+			}
 		},
 		copy: {
 			all: {
@@ -68,7 +133,9 @@ module.exports = function(grunt){
 		clean: {
 			folder: [
 				'dist/',
-				'docs/'
+				'docs/',
+				'src/html/inc/html_code/',
+				'src/html/inc/include_code/'
 			]
 		},
 		usebanner: {
@@ -215,21 +282,7 @@ module.exports = function(grunt){
 					'src/js/**/*.js',
 					'src/html/**/*.*'
 				],
-				tasks: [
-					'notify:watch',
-					'clean',
-					'less',
-					'autoprefixer',
-					'jshint',
-					'uglify',
-					'imagemin',
-					'pug:temp',
-					'replace',
-					'pug:files',
-					'copy',
-					'usebanner',
-					'notify:done'
-				]
+				tasks: tasksDef
 			}
 		},
 		notify: {
@@ -248,11 +301,27 @@ module.exports = function(grunt){
 				}
 			}
 		}
-	};
+	},
+	tasksDef = [
+		'notify:watch',
+		'clean',
+		'less',
+		'autoprefixer',
+		'jshint',
+		'uglify',
+		'imagemin',
+		'realFavicon',
+		'pug:temp',
+		'replace',
+		'pug:files',
+		'copy',
+		'usebanner',
+		'notify:done'
+	];
 	
 	grunt.initConfig(tasksConfig);
 	
 	grunt.renameTask('watch',		'delta');
     grunt.registerTask('dev',		[ 'jshint', 'delta']);
-	grunt.registerTask('default',	['notify:watch', 'clean', 'less', 'autoprefixer', 'jshint', 'uglify', 'imagemin', 'pug:temp', 'replace', 'pug:files', 'copy', 'usebanner', 'notify:done']);
+	grunt.registerTask('default',	tasksDef);
 }
