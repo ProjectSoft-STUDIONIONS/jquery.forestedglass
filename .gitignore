@@ -10,4 +10,8 @@ test/**/*
 tests/**/*
 src/images/bin/**/*
 src/bin/**/*
+src/css/**/*
+src/images/**/*
+src/js/**/*
+src/html/**/*
 !**/.gitignore
