@@ -1,3 +1,11 @@
+/**
+ * jQuery.forestedGlass: The effect of frosted glass 
+ * 
+ * Copyright 2018 @ProjectSoft<projectsoft2009@yandex.ru> 
+ * Licensed under the MIT license. 
+ * 
+ */
+
 ;(function($){
 	var ForestedGlass = function(element, options){
 			var data = $(element).data('forested.glass'),

@@ -79,7 +79,10 @@ module.exports = function(grunt){
 					linebreak: true
 				},
 				files: {
-					src: ['dist/jquery.forestedglass.js']
+					src: [
+						'dist/jquery.forestedglass.js',
+						'docs/js/jquery.forestedglass.js'
+					]
 				}
 			}
 		},
@@ -219,12 +222,12 @@ module.exports = function(grunt){
 					'autoprefixer',
 					'jshint',
 					'uglify',
-					'usebanner',
 					'imagemin',
 					'pug:temp',
 					'replace',
 					'pug:files',
 					'copy',
+					'usebanner',
 					'notify:done'
 				]
 			}
@@ -251,5 +254,5 @@ module.exports = function(grunt){
 	
 	grunt.renameTask('watch',		'delta');
     grunt.registerTask('dev',		[ 'jshint', 'delta']);
-	grunt.registerTask('default',	['notify:watch', 'clean', 'less', 'autoprefixer', 'jshint', 'uglify', 'usebanner', 'imagemin', 'pug:temp', 'replace', 'pug:files', 'copy', 'notify:done']);
+	grunt.registerTask('default',	['notify:watch', 'clean', 'less', 'autoprefixer', 'jshint', 'uglify', 'imagemin', 'pug:temp', 'replace', 'pug:files', 'copy', 'usebanner', 'notify:done']);
 }
