@@ -2,6 +2,7 @@
 **/*.inf
 **/*.db
 **/.*
+!**/.gitignore
 **/desktop.*
 /*.php
 node_modules/**/*
@@ -9,4 +10,3 @@ bower_components/**/*
 test/**/*
 tests/**/*
 src/**/*
-!**/.gitignore
