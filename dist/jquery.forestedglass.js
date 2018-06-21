@@ -76,7 +76,7 @@
 			var plg = this,
 				winInit = $(element).data("forested.glass.wininit");
 			if(!winInit){
-				$(window).on('load.forestedglass scroll.forestedglass resize.forestedglass', function(e){
+				$(window).on('load.forestedglass resize.forestedglass', function(e){
 					plg.checkPosition.call(plg);
 				});
 				$(document).bind("touchmove MSPointerMove pointermove", function(e){
