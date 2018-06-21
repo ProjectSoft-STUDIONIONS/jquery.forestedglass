@@ -1,5 +1,5 @@
 /**
- * jQuery.forestedGlass v1.0.1: The effect of frosted glass 
+ * jQuery.forestedGlass v2.0.0: The effect of frosted glass 
  * 
  * Copyright 2018 @ProjectSoft<projectsoft2009@yandex.ru> 
  * Licensed under the MIT license. 
@@ -25,13 +25,13 @@
 			this.checkOptions();
 			++ForestedGlass.prototype.index;
 		},
-		filterSvg = $('<svg style="display: none !important;" viewBox="0 0 500 500" width="500" height="500" id="jquery_blurfilter">'+
+		filterSvg = $('<svg viewBox="0 0 0 0" style="display: block; width: 0px; height: 0px;" id="jquery_blurfilter">'+
 					'<filter class="blurUno" id="blurUno">'+
 					'<feGaussianBlur class="blurUno_value" stdDeviation="5.00"></feGaussianBlur>'+
 					'</filter>'+
 					'</svg>');
 	
-	ForestedGlass.VERSION = '1.0.0';
+	ForestedGlass.VERSION = '2.0.0';
 	
 	ForestedGlass.DEFAULTS = {
 		target: "body",
