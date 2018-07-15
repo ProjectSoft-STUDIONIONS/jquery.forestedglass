@@ -1,5 +1,5 @@
 /**
- * jQuery.forestedGlass v2.0.0: The effect of frosted glass 
+ * jQuery.forestedGlass v2.0.1: The effect of frosted glass 
  * 
  * Copyright 2018 @ProjectSoft<projectsoft2009@yandex.ru> 
  * Licensed under the MIT license. 
@@ -76,12 +76,10 @@
 			var plg = this,
 				winInit = $(element).data("forested.glass.wininit");
 			if(!winInit){
-				$(window).on('load.forestedglass resize.forestedglass', function(e){
+				var observer = new ResizeObserver(function(entries){
 					plg.checkPosition.call(plg);
 				});
-				$(document).bind("touchmove MSPointerMove pointermove", function(e){
-					plg.checkPosition.call(plg);
-				});
+				observer.observe(element);
 				$(element).data("forested.glass.wininit", true);
 			}
 		}

@@ -133,8 +133,7 @@ module.exports = function(grunt){
 		clean: {
 			folder: [
 				'dist/',
-				'docs/',
-				'src/html/inc/html_code/',
+				//'src/html/inc/html_code/',
 				'src/html/inc/include_code/'
 			]
 		},
@@ -272,7 +271,7 @@ module.exports = function(grunt){
 				]
 			}
 		},
-		delta: {
+		watch: {
 			options: {
 				livereload: true,
 			},
@@ -280,9 +279,23 @@ module.exports = function(grunt){
 				files: [
 					'src/css/**/*.{css,less}',
 					'src/js/**/*.js',
-					'src/html/**/*.*'
+					'src/html/**/*.pug'
 				],
-				tasks: tasksDef
+				tasks: [
+					'notify:watch',
+					'clean',
+					'less',
+					'autoprefixer',
+					'jshint',
+					'uglify',
+					'newer:imagemin',
+					'pug:temp',
+					'replace',
+					'pug:files',
+					'copy',
+					'usebanner',
+					'notify:done'
+				]
 			}
 		},
 		notify: {
@@ -309,7 +322,7 @@ module.exports = function(grunt){
 		'autoprefixer',
 		'jshint',
 		'uglify',
-		'imagemin',
+		//'imagemin',
 		'realFavicon',
 		'pug:temp',
 		'replace',
@@ -321,7 +334,6 @@ module.exports = function(grunt){
 	
 	grunt.initConfig(tasksConfig);
 	
-	grunt.renameTask('watch',		'delta');
-    grunt.registerTask('dev',		[ 'jshint', 'delta']);
+    grunt.registerTask('dev',		[ 'jshint', 'watch']);
 	grunt.registerTask('default',	tasksDef);
 }

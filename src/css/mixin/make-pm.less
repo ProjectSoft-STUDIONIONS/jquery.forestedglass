@@ -1,0 +1,10 @@
+.make-pm(@style, @prefix, @step: 5, @start: 0, @end: 100){
+	.loop(@counter) when (@counter <= @end) {
+		@class: ~".@{prefix}-@{counter}";
+		@{class}{
+			@{style}: 1px * @counter;
+		}
+		.loop((@counter + @step));
+	}
+	.loop(@start);
+}

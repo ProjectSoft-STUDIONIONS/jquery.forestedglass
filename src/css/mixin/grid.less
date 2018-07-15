@@ -1,0 +1,13 @@
+.calc-grid-column(@index, @type) when (@type = width) and (@index > 0) {
+  .col-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.loop-grid-columns(@index, @type) when (@index >= 0) {
+    .calc-grid-column(@index, @type);
+    // next iteration
+    .loop-grid-columns((@index - 1), @type);
+}
+.make-grid() {
+    .loop-grid-columns(@grid-columns, width)
+}

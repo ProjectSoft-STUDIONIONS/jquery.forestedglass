@@ -9,4 +9,5 @@ node_modules/**/*
 bower_components/**/*
 test/**/*
 tests/**/*
-src/**/*
+src/html/inc/html_code/**/*
+src/html/inc/include_code/**/*

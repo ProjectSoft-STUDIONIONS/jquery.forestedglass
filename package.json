@@ -1,6 +1,6 @@
 {
   "name": "jquery.forestedglass",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "The effect of frosted glass",
   "main": "package.json",
   "scripts": {
@@ -31,6 +31,7 @@
     "grunt-contrib-pug": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-newer": "^1.3.0",
     "grunt-notify": "git+https://github.com/ProjectSoft-STUDIONIONS/grunt-notify.git",
     "grunt-real-favicon": "latest",
     "grunt-text-replace": "latest",
