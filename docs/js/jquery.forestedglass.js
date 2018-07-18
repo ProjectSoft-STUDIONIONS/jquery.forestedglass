@@ -80,6 +80,7 @@
 					plg.checkPosition.call(plg);
 				});
 				observer.observe(element);
+				$(window).on('resize.forestedglass scroll.forestedglass', plg.checkPosition.bind(plg));
 				$(element).data("forested.glass.wininit", true);
 			}
 		}
