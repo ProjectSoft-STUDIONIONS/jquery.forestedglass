@@ -1,5 +1,5 @@
 /**
- * jQuery.forestedGlass v2.0.1: The effect of frosted glass 
+ * jQuery.forestedGlass v2.0.2: The effect of frosted glass 
  * 
  * Copyright 2018 @ProjectSoft<projectsoft2009@yandex.ru> 
  * Licensed under the MIT license. 
