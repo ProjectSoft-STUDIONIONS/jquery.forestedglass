@@ -5,4 +5,5 @@
 		indent:'tabs',
 		list:'ol'
 	});
+	console.log('Hello');
 })(jQuery);
